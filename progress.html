@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FitTrack Pro - Progress</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="progress-page">
+    
+    <!-- NAVIGATION BAR -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <h1 class="nav-logo">💪 FitTrack Pro</h1>
+            <div class="nav-links">
+                <a href="dashboard.html" class="nav-link">Dashboard</a>
+                <a href="workout.html" class="nav-link">Workout Plans</a>
+                <a href="progress.html" class="nav-link active">Progress</a>
+            </div>
+            <div class="nav-user">
+                <span class="user-name" id="userName">Welcome User</span>
+                <button class="btn-logout" onclick="logout()">Logout</button>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- PROGRESS CONTENT -->
+    <main class="progress-main">
+        
+        <header class="page-header">
+            <h2>Your Fitness Journey</h2>
+            <p>Track your progress and achievements</p>
+        </header>
+        
+        <!-- STATS SUMMARY -->
+        <div class="stats-summary">
+            <div class="stat-card">
+                <div class="stat-icon">🏆</div>
+                <div class="stat-info">
+                    <p class="stat-value" id="totalWorkouts">12</p>
+                    <p class="stat-label">Workouts Completed</p>
+                </div>
+            </div>
+            
+            <div class="stat-card">
+                <div class="stat-icon">🔥</div>
+                <div class="stat-info">
+                    <p class="stat-value" id="totalCalories">5,240</p>
+                    <p class="stat-label">Calories Burned</p>
+                </div>
+            </div>
+            
+            <div class="stat-card">
+                <div class="stat-icon">⏱️</div>
+                <div class="stat-info">
+                    <p class="stat-value" id="totalTime">8.5</p>
+                    <p class="stat-label">Hours Trained</p>
+                </div>
+            </div>
+            
+            <div class="stat-card">
+                <div class="stat-icon">📈</div>
+                <div class="stat-info">
+                    <p class="stat-value streak" id="currentStreak">7</p>
+                    <p class="stat-label">Day Streak</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- WEEKLY PROGRESS CHART -->
+        <div class="progress-chart-section">
+            <h3>Weekly Activity Overview</h3>
+            <div class="chart-container">
+                <div class="bar-chart">
+                    <div class="bar-item">
+                        <div class="bar" style="height: 70%">
+                            <span class="bar-label">450</span>
+                        </div>
+                        <span class="day-label">Mon</span>
+                    </div>
+                    <div class="bar-item">
+                        <div class="bar" style="height: 85%">
+                            <span class="bar-label">550</span>
+                        </div>
+                        <span class="day-label">Tue</span>
+                    </div>
+                    <div class="bar-item">
+                        <div class="bar" style="height: 50%">
+                            <span class="bar-label">320</span>
+                        </div>
+                        <span class="day-label">Wed</span>
+                    </div>
+                    <div class="bar-item">
+                        <div class="bar" style="height: 75%">
+                            <span class="bar-label">480</span>
+                        </div>
+                        <span class="day-label">Thu</span>
+                    </div>
+                    <div class="bar-item">
+                        <div class="bar" style="height: 80%">
+                            <span class="bar-label">520</span>
+                        </div>
+                        <span class="day-label">Fri</span>
+                    </div>
+                    <div class="bar-item">
+                        <div class="bar" style="height: 45%">
+                            <span class="bar-label">280</span>
+                        </div>
+                        <span class="day-label">Sat</span>
+                    </div>
+                    <div class="bar-item">
+                        <div class="bar rest" style="height: 20%">
+                            <span class="bar-label">Rest</span>
+                        </div>
+                        <span class="day-label">Sun</span>
+                    </div>
+                </div>
+                <p class="chart-caption">Calories burned per day this week</p>
+            </div>
+        </div>
+        
+        <!-- ACHIEVEMENTS -->
+        <div class="achievements-section">
+            <h3>Achievements Unlocked</h3>
+            <div class="achievements-grid">
+                <div class="achievement-card unlocked">
+                    <div class="achievement-icon">🔥</div>
+                    <h4>First Steps</h4>
+                    <p>Complete your first workout</p>
+                </div>
+                
+                <div class="achievement-card unlocked">
+                    <div class="achievement-icon">💪</div>
+                    <h4>Week Warrior</h4>
+                    <p>7-day workout streak</p>
+                </div>
+                
+                <div class="achievement-card unlocked">
+                    <div class="achievement-icon">🏆</div>
+                    <h4>Calorie Crusher</h4>
+                    <p>Burn 5,000+ calories</p>
+                </div>
+                
+                <div class="achievement-card locked">
+                    <div class="achievement-icon">🌟</div>
+                    <h4>Marathon Master</h4>
+                    <p>Complete 30 workouts</p>
+                    <div class="progress-bar-small">
+                        <div class="progress-fill-small" style="width: 40%"></div>
+                    </div>
+                </div>
+                
+                <div class="achievement-card locked">
+                    <div class="achievement-icon">💎</div>
+                    <h4>Diamond Level</h4>
+                    <p>30-day streak</p>
+                    <div class="progress-bar-small">
+                        <div class="progress-fill-small" style="width: 23%"></div>
+                    </div>
+                </div>
+                
+                <div class="achievement-card locked">
+                    <div class="achievement-icon">👑</div>
+                    <h4>Fitness King</h4>
+                    <p>Reach all goals for 7 days</p>
+                    <div class="progress-bar-small">
+                        <div class="progress-fill-small" style="width: 71%"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- RECENT WORKOUTS LOG -->
+        <div class="workout-log-section">
+            <h3>Recent Workouts</h3>
+            <div class="workout-log">
+                <div class="log-item">
+                    <div class="log-date">
+                        <span class="date-day">28</span>
+                        <span class="date-month">Dec</span>
+                    </div>
+                    <div class="log-details">
+                        <h4>Full Body HIIT</h4>
+                        <p>35 minutes • 450 calories</p>
+                    </div>
+                    <div class="log-status completed">✓ Completed</div>
+                </div>
+                
+                <div class="log-item">
+                    <div class="log-date">
+                        <span class="date-day">27</span>
+                        <span class="date-month">Dec</span>
+                    </div>
+                    <div class="log-details">
+                        <h4>Cardio Blast</h4>
+                        <p>50 minutes • 550 calories</p>
+                    </div>
+                    <div class="log-status completed">✓ Completed</div>
+                </div>
+                
+                <div class="log-item">
+                    <div class="log-date">
+                        <span class="date-day">26</span>
+                        <span class="date-month">Dec</span>
+                    </div>
+                    <div class="log-details">
+                        <h4>Core & Abs Focus</h4>
+                        <p>30 minutes • 320 calories</p>
+                    </div>
+                    <div class="log-status completed">✓ Completed</div>
+                </div>
+            </div>
+        </div>
+        
+    </main>
+    
+    <script src="script.js"></script>
+</body>
+</html>

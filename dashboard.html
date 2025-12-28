@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FitTrack Pro - Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="dashboard-page">
+    
+    <!-- NAVIGATION BAR -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <h1 class="nav-logo">💪 FitTrack Pro</h1>
+            <div class="nav-links">
+                <a href="dashboard.html" class="nav-link active">Dashboard</a>
+                <a href="workout.html" class="nav-link">Workout Plans</a>
+                <a href="progress.html" class="nav-link">Progress</a>
+            </div>
+            <div class="nav-user">
+                <span class="user-name" id="userName">Welcome User</span>
+                <button class="btn-logout" onclick="logout()">Logout</button>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- MAIN DASHBOARD CONTENT -->
+    <main class="dashboard-main">
+        
+        <!-- HEADER WITH DATE -->
+        <header class="dashboard-header">
+            <div>
+                <h2>Your Daily Dashboard</h2>
+                <p class="date-display" id="currentDate">Loading...</p>
+            </div>
+            <div class="quick-stats">
+                <span class="stat-badge">🔥 <span id="caloriesBurned">0</span> cal burned</span>
+            </div>
+        </header>
+        
+        <!-- DASHBOARD GRID -->
+        <div class="dashboard-grid">
+            
+            <!-- SENSOR CARD: Heart Rate -->
+            <div class="dash-card sensor-card">
+                <div class="card-header">
+                    <h3>❤️ Heart Rate</h3>
+                    <span class="status-badge live">LIVE</span>
+                </div>
+                <div class="sensor-display">
+                    <div class="sensor-value">
+                        <span class="big-number" id="heartRate">72</span>
+                        <span class="unit">BPM</span>
+                    </div>
+                    <p class="sensor-status" id="heartStatus">Normal</p>
+                </div>
+                <div class="sensor-graph">
+                    <div class="pulse-line"></div>
+                </div>
+            </div>
+            
+            <!-- SENSOR CARD: Step Counter with Accelerometer -->
+            <div class="dash-card sensor-card">
+                <div class="card-header">
+                    <h3>🚶 Steps Today</h3>
+                    <span class="status-badge active">ACTIVE</span>
+                </div>
+                <div class="sensor-display">
+                    <div class="sensor-value">
+                        <span class="big-number" id="stepsCount">0</span>
+                        <span class="unit">steps</span>
+                    </div>
+                    <p class="sensor-status">Goal: 10,000 steps</p>
+                </div>
+                <div class="button-group">
+                    <button class="btn-primary" onclick="addSteps()">+ 100 Steps</button>
+                    <button class="btn-secondary" onclick="resetSteps()">Reset</button>
+                </div>
+            </div>
+            
+            <!-- GPS TRACKING CARD -->
+            <div class="dash-card gps-card">
+                <div class="card-header">
+                    <h3>📍 GPS Location</h3>
+                    <span class="status-badge" id="gpsStatus">SEARCHING...</span>
+                </div>
+                <div class="gps-display">
+                    <div class="gps-info">
+                        <p><strong>Latitude:</strong> <span id="latitude">--</span></p>
+                        <p><strong>Longitude:</strong> <span id="longitude">--</span></p>
+                        <p><strong>Accuracy:</strong> <span id="accuracy">--</span></p>
+                    </div>
+                    <div class="gps-map">
+                        <div class="map-placeholder">
+                            <span class="map-icon">🗺️</span>
+                            <p id="locationName">Detecting location...</p>
+                        </div>
+                    </div>
+                </div>
+                <button class="btn-primary" onclick="getLocation()">📍 Track My Location</button>
+            </div>
+            
+            <!-- DISTANCE TRACKER -->
+            <div class="dash-card">
+                <div class="card-header">
+                    <h3>🏃 Distance Covered</h3>
+                </div>
+                <div class="sensor-display">
+                    <div class="sensor-value">
+                        <span class="big-number" id="distanceKm">0.00</span>
+                        <span class="unit">km</span>
+                    </div>
+                    <p class="sensor-status">Calculated from steps</p>
+                </div>
+            </div>
+            
+            <!-- WATER INTAKE -->
+            <div class="dash-card">
+                <div class="card-header">
+                    <h3>💧 Water Intake</h3>
+                </div>
+                <div class="sensor-display">
+                    <div class="sensor-value">
+                        <span class="big-number" id="waterCount">0</span>
+                        <span class="unit">glasses</span>
+                    </div>
+                    <p class="sensor-status">Goal: 8 glasses</p>
+                </div>
+                <div class="button-group">
+                    <button class="btn-primary" onclick="addWater()">+ 1 Glass</button>
+                    <button class="btn-secondary" onclick="resetWater()">Reset</button>
+                </div>
+            </div>
+            
+            <!-- OVERALL PROGRESS -->
+            <div class="dash-card progress-card">
+                <div class="card-header">
+                    <h3>🎯 Today's Progress</h3>
+                </div>
+                <div class="progress-display">
+                    <div class="circular-progress">
+                        <svg viewBox="0 0 100 100">
+                            <circle cx="50" cy="50" r="45" class="progress-bg"></circle>
+                            <circle cx="50" cy="50" r="45" class="progress-fill" id="progressCircle"></circle>
+                        </svg>
+                        <div class="progress-text">
+                            <span class="progress-percent" id="progressPercent">0</span>%
+                        </div>
+                    </div>
+                    <p class="progress-label">Overall Daily Goal</p>
+                </div>
+            </div>
+            
+        </div>
+        
+    </main>
+    
+    <script src="script.js"></script>
+</body>
+</html>

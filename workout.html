@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FitTrack Pro - Workout Plans</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="workout-page">
+    
+    <!-- NAVIGATION BAR -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <h1 class="nav-logo">💪 FitTrack Pro</h1>
+            <div class="nav-links">
+                <a href="dashboard.html" class="nav-link">Dashboard</a>
+                <a href="workout.html" class="nav-link active">Workout Plans</a>
+                <a href="progress.html" class="nav-link">Progress</a>
+            </div>
+            <div class="nav-user">
+                <span class="user-name" id="userName">Welcome User</span>
+                <button class="btn-logout" onclick="logout()">Logout</button>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- WORKOUT PLANS CONTENT -->
+    <main class="workout-main">
+        
+        <header class="page-header">
+            <h2>Choose Your Workout Plan</h2>
+            <p>Customized programs based on your fitness goals</p>
+        </header>
+        
+        <!-- WORKOUT PLAN SELECTOR -->
+        <div class="plan-selector">
+            <button class="plan-tab active" onclick="showPlan('weight-loss')">
+                🔥 Weight Loss
+            </button>
+            <button class="plan-tab" onclick="showPlan('weight-gain')">
+                💪 Weight Gain
+            </button>
+        </div>
+        
+        <!-- WEIGHT LOSS PLAN -->
+        <div id="weight-loss-plan" class="plan-section active">
+            <div class="plan-header">
+                <h3>🔥 Weight Loss Program</h3>
+                <p>High intensity cardio and strength training for fat burning</p>
+            </div>
+            
+            <div class="plan-grid">
+                
+                <!-- Monday -->
+                <div class="workout-card">
+                    <div class="day-badge">Monday</div>
+                    <h4>Full Body HIIT</h4>
+                    <ul class="exercise-list">
+                        <li>Jumping Jacks - 3 sets × 30 sec</li>
+                        <li>Burpees - 3 sets × 10 reps</li>
+                        <li>Mountain Climbers - 3 sets × 20 reps</li>
+                        <li>High Knees - 3 sets × 30 sec</li>
+                        <li>Plank - 3 sets × 45 sec</li>
+                    </ul>
+                    <div class="workout-stats">
+                        <span>⏱️ 35 min</span>
+                        <span>🔥 450 cal</span>
+                    </div>
+                    <button class="btn-start" onclick="startWorkout('Full Body HIIT')">Start Workout</button>
+                </div>
+                
+                <!-- Tuesday -->
+                <div class="workout-card">
+                    <div class="day-badge">Tuesday</div>
+                    <h4>Cardio Blast</h4>
+                    <ul class="exercise-list">
+                        <li>Running/Jogging - 20 min</li>
+                        <li>Jump Rope - 5 sets × 1 min</li>
+                        <li>Cycling - 15 min</li>
+                        <li>Cool Down Walk - 10 min</li>
+                    </ul>
+                    <div class="workout-stats">
+                        <span>⏱️ 50 min</span>
+                        <span>🔥 550 cal</span>
+                    </div>
+                    <button class="btn-start" onclick="startWorkout('Cardio Blast')">Start Workout</button>
+                </div>
+                
+                <!-- Wednesday -->
+                <div class="workout-card">
+                    <div class="day-badge">Wednesday</div>
+                    <h4>Core & Abs Focus</h4>
+                    <ul class="exercise-list">
+                        <li>Crunches - 4 sets × 25 reps</li>
+                        <li>Russian Twists - 3 sets × 30 reps</li>
+                        <li>Leg Raises - 3 sets × 15 reps</li>
+                        <li>Bicycle Crunches - 3 sets × 20 reps</li>
+                        <li>Plank Hold - 3 sets × 60 sec</li>
+                    </ul>
+                    <div class="workout-stats">
+                        <span>⏱️ 30 min</span>
+                        <span>🔥 320 cal</span>
+                    </div>
+                    <button class="btn-start" onclick="startWorkout('Core & Abs Focus')">Start Workout</button>
+                </div>
+                
+                <!-- Thursday -->
+                <div class="workout-card">
+                    <div class="day-badge">Thursday</div>
+                    <h4>Total Body Circuit</h4>
+                    <ul class="exercise-list">
+                        <li>Squats - 4 sets × 20 reps</li>
+                        <li>Push-ups - 4 sets × 15 reps</li>
+                        <li>Lunges - 3 sets × 12 reps each leg</li>
+                        <li>Dips - 3 sets × 10 reps</li>
+                        <li>Jump Squats - 3 sets × 15 reps</li>
+                    </ul>
+                    <div class="workout-stats">
+                        <span>⏱️ 40 min</span>
+                        <span>🔥 480 cal</span>
+                    </div>
+                    <button class="btn-start" onclick="startWorkout('Total Body Circuit')">Start Workout</button>
+                </div>
+                
+                <!-- Friday -->
+                <div class="workout-card">
+                    <div class="day-badge">Friday</div>
+                    <h4>Cardio + Strength Mix</h4>
+                    <ul class="exercise-list">
+                        <li>Warm-up Jog - 10 min</li>
+                        <li>Kettlebell Swings - 4 sets × 15 reps</li>
+                        <li>Box Jumps - 3 sets × 12 reps</li>
+                        <li>Battle Ropes - 4 sets × 30 sec</li>
+                        <li>Cool Down Stretch - 10 min</li>
+                    </ul>
+                    <div class="workout-stats">
+                        <span>⏱️ 45 min</span>
+                        <span>🔥 520 cal</span>
+                    </div>
+                    <button class="btn-start" onclick="startWorkout('Cardio + Strength Mix')">Start Workout</button>
+                </div>
+                
+                <!-- Saturday -->
+                <div class="workout-card">
+                    <div class="day-badge">Saturday</div>
+                    <h4>Active Recovery</h4>
+                    <ul class="exercise-list">
+                        <li>Yoga Flow - 30 min</li>
+                        <li>Light Swimming - 20 min</li>
+                        <li>Stretching Routine - 15 min</li>
+                    </ul>
+                    <div class="workout-stats">
+                        <span>⏱️ 65 min</span>
+                        <span>🔥 280 cal</span>
+                    </div>
+                    <button class="btn-start" onclick="startWorkout('Active Recovery')">Start Workout</button>
+                </div>
+                
+                <!-- Sunday -->
+                <div class="workout-card rest-day">
+                    <div class="day-badge rest">Sunday</div>
+                    <h4>Rest Day</h4>
+                    <p class="rest-message">Recovery is crucial! Take this day to rest and let your body rebuild stronger.</p>
+                    <div class="rest-tips">
+                        <p>✓ Stay hydrated</p>
+                        <p>✓ Eat nutritious meals</p>
+                        <p>✓ Get 8+ hours of sleep</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+        <!-- WEIGHT GAIN PLAN -->
+        <div id="weight-gain-plan" class="plan-section">
+            <div class="plan-header">
+                <h3>💪 Weight Gain / Muscle Building Program</h3>
+                <p>Progressive strength training for muscle growth and mass gain</p>
+            </div>
+            
+            <div class="plan-grid">
+                
+                <!-- Monday -->
+                <div class="workout-card">
+                    <div class="day-badge">Monday</div>
+                    <h4>Chest & Triceps</h4>
+                    <ul class="exercise-list">
+                        <li>Bench Press - 4 sets × 8-10 reps</li>
+                        <li>Incline Dumbbell Press - 3 sets × 10 reps</li>
+                        <li>Chest Flyes - 3 sets × 12 reps</li>
+                        <li>Tricep Dips - 4 sets × 10 reps</li>
+                        <li>Overhead Tricep Extension - 3 sets × 12 reps</li>
+                    </ul>
+                    <div class="workout-stats">
+                        <span>⏱️ 60 min</span>
+                        <span>🔥 380 cal</span>
+                    </div>
+                    <button class="btn-start" onclick="startWorkout('Chest & Triceps')">Start Workout</button>
+                </div>
+                
+                <!-- Tuesday -->
+                <div class="workout-card">
+                    <div class="day-badge">Tuesday</div>
+                    <h4>Back & Biceps</h4>
+                    <ul class="exercise-list">
+                        <li>Deadlifts - 4 sets × 6-8 reps</li>
+                        <li>Pull-ups - 4 sets × 8 reps</li>
+                        <li>Bent Over Rows - 4 sets × 10 reps</li>
+                        <li>Barbell Curls - 4 sets × 10 reps</li>
+                        <li>Hammer Curls - 3 sets × 12 reps</li>
+                    </ul>
+                    <div class="workout-stats">
+                        <span>⏱️ 65 min</span>
+                        <span>🔥 400 cal</span>
+                    </div>
+                    <button class="btn-start" onclick="startWorkout('Back & Biceps')">Start Workout</button>
+                </div>
+                
+                <!-- Wednesday -->
+                <div class="workout-card">
+                    <div class="day-badge">Wednesday</div>
+                    <h4>Legs & Glutes</h4>
+                    <ul class="exercise-list">
+                        <li>Squats - 5 sets × 8 reps</li>
+                        <li>Romanian Deadlifts - 4 sets × 10 reps</li>
+                        <li>Leg Press - 4 sets × 12 reps</li>
+                        <li>Leg Curls - 3 sets × 12 reps</li>
+                        <li>Calf Raises - 4 sets × 15 reps</li>
+                    </ul>
+                    <div class="workout-stats">
+                        <span>⏱️ 70 min</span>
+                        <span>🔥 450 cal</span>
+                    </div>
+                    <button class="btn-start" onclick="startWorkout('Legs & Glutes')">Start Workout</button>
+                </div>
+                
+                <!-- Thursday -->
+                <div class="workout-card rest-day">
+                    <div class="day-badge rest">Thursday</div>
+                    <h4>Rest Day</h4>
+                    <p class="rest-message">Muscles grow during rest! Focus on nutrition and recovery.</p>
+                    <div class="rest-tips">
+                        <p>✓ Consume protein-rich meals</p>
+                        <p>✓ Stay hydrated</p>
+                        <p>✓ Light stretching optional</p>
+                    </div>
+                </div>
+                
+                <!-- Friday -->
+                <div class="workout-card">
+                    <div class="day-badge">Friday</div>
+                    <h4>Shoulders & Abs</h4>
+                    <ul class="exercise-list">
+                        <li>Military Press - 4 sets × 8 reps</li>
+                        <li>Lateral Raises - 4 sets × 12 reps</li>
+                        <li>Front Raises - 3 sets × 12 reps</li>
+                        <li>Shrugs - 4 sets × 15 reps</li>
+                        <li>Weighted Crunches - 4 sets × 15 reps</li>
+                    </ul>
+                    <div class="workout-stats">
+                        <span>⏱️ 55 min</span>
+                        <span>🔥 360 cal</span>
+                    </div>
+                    <button class="btn-start" onclick="startWorkout('Shoulders & Abs')">Start Workout</button>
+                </div>
+                
+                <!-- Saturday -->
+                <div class="workout-card">
+                    <div class="day-badge">Saturday</div>
+                    <h4>Full Body Power</h4>
+                    <ul class="exercise-list">
+                        <li>Clean and Press - 4 sets × 6 reps</li>
+                        <li>Front Squats - 4 sets × 8 reps</li>
+                        <li>Weighted Pull-ups - 4 sets × 6 reps</li>
+                        <li>Farmer's Walk - 3 sets × 40m</li>
+                        <li>Plank with Weight - 3 sets × 45 sec</li>
+                    </ul>
+                    <div class="workout-stats">
+                        <span>⏱️ 60 min</span>
+                        <span>🔥 420 cal</span>
+                    </div>
+                    <button class="btn-start" onclick="startWorkout('Full Body Power')">Start Workout</button>
+                </div>
+                
+                <!-- Sunday -->
+                <div class="workout-card rest-day">
+                    <div class="day-badge rest">Sunday</div>
+                    <h4>Complete Rest</h4>
+                    <p class="rest-message">Full recovery day for maximum muscle growth!</p>
+                    <div class="rest-tips">
+                        <p>✓ High protein intake</p>
+                        <p>✓ Deep tissue massage</p>
+                        <p>✓ 8-9 hours sleep</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+    </main>
+    
+    <script src="script.js"></script>
+</body>
+</html>
